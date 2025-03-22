@@ -1,0 +1,332 @@
+/* 印刷用A4サイズ設定 */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Klee One', cursive; /* 手書き風フォント */
+    background-color: #f9f7f0;
+    color: #333;
+}
+
+/* A4サイズのページ設定 */
+.page {
+    width: 210mm;
+    height: 297mm;
+    padding: 20mm;
+    box-sizing: border-box;
+    background-color: white;
+    /* ノート風の罫線 */
+    background-image: linear-gradient(rgba(238, 238, 238, 0.7) .1em, transparent .1em);
+    background-size: 100% 1.5em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 手書きメモ風の装飾 */
+.handwritten-note {
+    position: absolute;
+    top: 12mm;
+    right: 30mm;
+    transform: rotate(15deg);
+    font-family: 'Caveat', cursive;
+    color: #d35400;
+    font-size: 18px;
+    border: 1px solid #d35400;
+    padding: 5px 10px;
+    background-color: rgba(255, 245, 215, 0.7);
+    z-index: 10;
+}
+
+/* ヘッダースタイル */
+header {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 3px dashed #f8b400;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Yusei Magic', sans-serif;
+    color: #e65b00;
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff,
+               -1px 1px 0 #fff, 1px -1px 0 #fff,
+               0px 1px 0 #fff, 0-1px 0 #fff,
+               -1px 0 0 #fff, 1px 0 0 #fff;
+}
+
+.catchphrase {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 18px;
+    color: #f8b400;
+    font-weight: bold;
+}
+
+/* メインコンテンツ */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.content-wrapper {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.text-content {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.image-container {
+    flex: 2;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+h3 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #d35400;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(transparent 70%, #ffd59e 70%);
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.intro {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.highlight {
+    font-weight: bold;
+    background: linear-gradient(transparent 60%, #ffd59e 60%);
+}
+
+/* 理由説明部分 */
+.reasons {
+    margin: 12px 0;
+    background-color: rgba(247, 251, 252, 0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px dashed #aad8e6;
+}
+
+.reason-title {
+    font-weight: bold;
+    color: #008c8c;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.reason {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.reason-highlight {
+    font-weight: bold;
+    color: #d35400;
+}
+
+/* 吹き出し装飾 */
+.speech-bubble {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background-color: #ff9966;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    transform: rotate(10deg);
+    z-index: 2;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    border-width: 10px 5px 0;
+    border-style: solid;
+    border-color: #ff9966 transparent;
+}
+
+/* コーンスープのリクエスト部分 */
+.soup-request {
+    margin-top: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.soup-image {
+    max-width: 70%;
+    height: auto;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
+}
+
+.soup-message {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    background: linear-gradient(transparent 60%, #aad8e6 60%);
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* 画像スタイル */
+.image-container img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 8px;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
+}
+
+.image-caption {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 14px;
+    color: #e65b00;
+    font-weight: bold;
+}
+
+/* メリット部分 */
+.benefits {
+    background-color: rgba(255, 248, 225, 0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px dashed #f8b400;
+}
+
+.benefits ul {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.benefits li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+/* 結論部分 */
+.conclusion {
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: rgba(255, 238, 217, 0.7);
+    border-radius: 10px;
+}
+
+.conclusion p {
+    font-weight: bold;
+    color: #e65b00;
+}
+
+/* 署名部分 */
+.signature {
+    margin-top: 25px;
+    text-align: right;
+    font-family: 'Caveat', cursive;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #008c8c;
+    margin: 5px 0;
+}
+
+.date {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* 装飾要素 */
+.decoration {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0.3;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.decoration-1 {
+    top: 70mm;
+    left: 15mm;
+    color: #e65b00;
+    transform: rotate(-15deg);
+}
+
+.decoration-2 {
+    bottom: 80mm;
+    right: 25mm;
+    color: #008c8c;
+    transform: rotate(10deg);
+}
+
+/* スタンプ風の装飾 */
+.stamp {
+    position: absolute;
+    bottom: 40mm;
+    right: 30mm;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(229, 57, 53, 0.1);
+    border: 2px solid rgba(229, 57, 53, 0.3);
+    color: rgba(229, 57, 53, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2;
+    transform: rotate(-15deg);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* 手書き風の背景装飾 */
+.page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(rgba(255, 178, 102, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+    z-index: 0;
+}
+
+/* 印刷設定 */
+@media print {
+    body {
+        background: none;
+    }
+    
+    .page {
+        box-shadow: none;
+        margin: 0;
+    }
+}
